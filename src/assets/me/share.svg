@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>share</title>
+    <desc>Created with Sketch.</desc>
+    <g id="share" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="40" height="40"></rect>
+        <g id="feedback_share-2" fill="#EA4335" fill-rule="nonzero">
+            <g id="feedback_share">
+                <path d="M20,0 C31,0 40,9 40,20 C40,31 31,40 20,40 C9,40 0,31 0,20 C0,9 9,0 20,0 Z M21.96,15.9066667 C16.12,15.9066667 11.3733333,20.6533333 11.3733333,26.4933333 C14.88,21.2 21.96,22.96 21.96,22.96 L21.96,26.4933333 L29.04,19.44 L21.96,12.36 L21.96,15.9066667 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
