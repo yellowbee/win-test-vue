@@ -64,6 +64,7 @@
     import Back from '../common/Back';
     import axios from 'axios';
     import { mapActions, mapGetters } from 'vuex';
+    import selector from '../../common/js/constants';
 
     export default {
         name: "Signup",
@@ -195,6 +196,7 @@
             }
         },
         data() {
+            let industry_selection = selector.industry.concat(['其他']);
             return {
                 errors: {
                   name: null,
@@ -215,12 +217,12 @@
                 },
                 picker: {
                     data_natural: [
-                      ['60后','70后','80后','85后','90后','95后','00后'],
-                      ['男','女']
+                        selector.age,
+                        selector.sex
                     ],
                     data_social: [
-                        ['互联网','通讯','交通','零售','建筑','金融','软件','政府','医疗','健康','制造业','汽车','媒体','能源','教育','咨询'],
-                        ['高中','大专','本科','研究生']
+                        industry_selection,
+                        selector.edu
                     ]
                 },
                 getCodeBtn: {

@@ -25,6 +25,7 @@
     import TaskList from './TaskList';
     import axios from 'axios';
     import { mapGetters } from 'vuex';
+    import selector from '../../common/js/constants';
 
     export default {
         name: "TaskSearch",
@@ -62,6 +63,10 @@
             },
         },
         data() {
+            let industry_selection = selector.industry.concat(['不限']);
+            let age_selection = selector.age.concat(['不限']);
+            let sex_selection = selector.sex.concat(['不限']);
+
             return {
                 filter: {
                     industry: null,
@@ -70,9 +75,9 @@
                 },
                 picker: {
                     data_filter: [
-                        ['互联网','通讯','交通','零售','建筑','金融','软件','政府','医疗','健康','制造业','汽车','媒体','能源','教育','咨询','不限'],
-                        ['60后','70后','80后','85后','90后','95后','00后','不限'],
-                        ['男','女','不限']
+                        industry_selection,
+                        age_selection,
+                        sex_selection
                     ]
                 },
                 tasks: null
