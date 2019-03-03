@@ -23,6 +23,9 @@ app.use(staticFileMiddleware);
 
 // If no route is matched by now, it must be a 404
 app.use(function(req, res, next) {
+    let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log(fullUrl);
+
     let err = new Error('Fancy page Not Found');
     err.status = 404;
     next(err);
