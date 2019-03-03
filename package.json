@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.14.1",
+    "connect-history-api-fallback": "^1.6.0",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "mint-ui": "^2.2.13",
