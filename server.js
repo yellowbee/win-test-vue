@@ -12,7 +12,7 @@ const app = express();
 
 console.log(`server.js is running under ${ __dirname }`);
 
-const staticFileMiddleware = express.static('dist');
+const staticFileMiddleware = express.static(path.join(__dirname, 'dist'));
 app.use(staticFileMiddleware);
 app.use(history());
 app.use(staticFileMiddleware);
