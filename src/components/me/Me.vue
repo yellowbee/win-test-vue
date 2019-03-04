@@ -5,7 +5,8 @@
             <div class="find-content">
                 <div class="friend-circle">
                 <img class="avatar-img" src="../../assets/me/panda.png" />
-                <router-link v-if="!isLoggedIn" tag="div" @click.native="onClickSubRoute" to="/me/sign-in">
+                <!-- <router-link v-if="!isLoggedIn" tag="div" @click.native="onClickSubRoute" to="/me/sign-in"> -->
+                <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
                     <span class="label-text">这里登录或注册, 查看更多信息</span>
                 </router-link>
                 </div>
@@ -21,7 +22,8 @@
                 <Tabbar/>
             </div>
         </div>
-        <router-view @backToMe="onBackToMe"></router-view>
+        <!-- <router-view @backToMe="onBackToMe"></router-view> -->
+        <router-view></router-view>
     </div>
 </template>
 

@@ -1,7 +1,8 @@
 <template>
     <transition name="slide">
         <div class="sign-in">
-            <Back @click.native="onClickBack" :destRoute="'/me/sign-in'" :title="'注册'"/>
+            <!-- <Back @click.native="onClickBack" :destRoute="'/me/sign-in'" :title="'注册'"/> -->
+            <Back :destRoute="'/me/sign-in'" :title="'注册'"/>
 
             <div class="form">
                 <div class="page-title">测试者注册</div>
@@ -53,7 +54,8 @@
                     </mt-button>
                 </form>
             </div>
-            <router-link tag="div" @click.native="onClickBack" class="helper-text" to="/me/sign-in">
+            <!-- <router-link tag="div" @click.native="onClickBack" class="helper-text" to="/me/sign-in"> -->
+            <router-link tag="div" class="helper-text" to="/me/sign-in">
                 已有账号， 进行登录
             </router-link>
         </div>
