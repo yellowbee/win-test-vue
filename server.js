@@ -10,6 +10,8 @@ const app = express();
 //app.use(logger('dev'));
 //app.use(bodyParser.json());
 
+console.log(`server.js is running under ${ __dirname }`);
+
 const staticFileMiddleware = express.static('dist');
 app.use(staticFileMiddleware);
 app.use(history());
