@@ -47,7 +47,7 @@
     }
 
     .head {
-        color: #184b86;
+        color: $theme-color;
         margin: 10px 0;
     }
     .sec-head {

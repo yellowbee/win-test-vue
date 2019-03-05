@@ -2,7 +2,7 @@
     <div class="search">
         <Header :title="'赚测试'" />
         <div class="head-holder"></div>
-        <div v-if="!isLoggedIn" class="helper-text">登录/注册查看更多参与测试的机会!</div>
+        <div v-if="!isLoggedIn" class="helper-text">登录或注册后可以查看到更多任务哦!</div>
         <div class="title">
             筛选测试任务
         </div>
