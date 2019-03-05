@@ -1,7 +1,8 @@
 <template>
     <transition name="slide">
         <div class="how-to">
-            <Back @click.native="onClickBack" :destRoute="'/me'" :title="'使用指南'"/>
+            <!-- <Back @click.native="onClickBack" :destRoute="'/me'" :title="'使用指南'"/> -->
+            <Back :destRoute="'/me'" :title="'使用指南'"/>
 
             <div class="content-wrapper" ref="wrapper">
                 <div class="content">

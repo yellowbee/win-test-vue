@@ -10,7 +10,8 @@
                     <span class="label-text">这里登录或注册, 查看更多信息</span>
                 </router-link>
                 </div>
-                <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to">
+                <!-- <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to"> -->
+                <router-link tag="div" class="friend-circle" to="/me/how-to">
                     <img class="find-img" src="../../assets/me/guide.svg" />
                     <span class="find-item">使用指南</span>
                 </router-link>

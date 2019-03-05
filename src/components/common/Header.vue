@@ -1,6 +1,6 @@
 <template>
     <div class="app-header">
-        <div class="title">{{ title }}</div>
+        <div>{{ title }}</div>
     </div>
 </template>
 
@@ -11,14 +11,16 @@
     }
 </script>
 
-<style scoped>
-    app-header{
-        background-color: #184b86;
+<style scoped lang="scss">
+    @import "../../scss/constants";
+
+    .app-header {
+        background-color: $theme-color;
         height: 50px;
         color: #fff;
-        position: fixed;
-        top: 0;
         width: 100%;
-        /*z-index: 9;*/
+        padding: 15px 0 0 15px;
+
+        font-size: $ft-page-title;
     }
 </style>

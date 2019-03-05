@@ -1,7 +1,11 @@
 <template>
     <div class="search">
         <Header :title="'赚测试'" />
-        <div class="title">筛选测试任务</div>
+        <div class="head-holder"></div>
+        <div v-if="!isLoggedIn" class="helper-text">登录/注册查看更多参与测试的机会!</div>
+        <div class="title">
+            筛选测试任务
+        </div>
         <div class="flex-container filter" @click="showPickerFilter">
             <div class="industry">{{ filter.industry === null ? '行业' : filter.industry }}</div>
             <div class="age">{{ filter.age === null ? '年龄' : filter.age }}</div>
@@ -13,7 +17,6 @@
                 @cancel="handlePickerFilterCancel"
                 @confirm="handlePickerFilterConfirm">
         </awesome-picker>
-        <div v-if="!isLoggedIn" class="helper-text">登录/注册查看更多参与测试的机会!</div>
         <TaskList :tasks="tasks"/>
         <Tabbar/>
     </div>
@@ -114,10 +117,14 @@
         right: 0;
         background-color: $bg-theme-color;
     }
+    .head-holder {
+        height: 50px;
+    }
     .title {
         text-align: center;
-        margin: 60px 0 20px 0;
+        margin: 10px 0 20px 0;
         font-size: $ft-page-title;
+        width: 100%;
     }
     .filter {
         background-color: white;
@@ -130,5 +137,9 @@
     .helper-text {
         text-align: center;
         padding: 10px 0;
+        background-color: $help-text-color;
+        color: white;
+        width: 100%;
+        font-size: $ft-help-text;
     }
 </style>
