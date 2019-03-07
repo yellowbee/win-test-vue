@@ -11,6 +11,7 @@
             <div class="age">{{ filter.age === null ? '年龄' : filter.age }}</div>
             <div class="sex">{{ filter.sex === null ? '性别' : filter.sex }}</div>
         </div>
+        <div class="gradient-bar" />
         <awesome-picker
                 ref="picker_filter"
                 :data="picker.data_filter"
@@ -122,13 +123,19 @@
     }
     .title {
         text-align: center;
-        margin: 10px 0 20px 0;
+        padding: 10px 0;
         font-size: $ft-page-title;
         width: 100%;
+        background-color: #f8f8f8;
     }
     .filter {
         background-color: white;
         padding: 10px 0;
+    }
+    .gradient-bar {
+        width: 100%;
+        height: 5px;
+        background-image: linear-gradient(#e8e8e8, white);
     }
     .industry, .age, .sex {
         width: 33%;

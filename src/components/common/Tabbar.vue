@@ -2,7 +2,7 @@
     <div class="tab">
         <router-link tag="div" class="tab-item" to="/search">
             <div class="tab-link tab-link-1">
-                <span class="tab-link-text">找人测试</span>
+                <span class="tab-link-text">找任务</span>
             </div>
         </router-link>
         <router-link tag="div" class="tab-item" to="/me">
