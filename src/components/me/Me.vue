@@ -3,15 +3,17 @@
         <div class="wrapper" ref="wrapper">
             <Header :title="'我'"/>
             <div class="find-content">
+                <div class="reminder">小提示: 点击头像进一步完善个人资料可以更快接到任务哦!</div>
+
                 <div class="friend-circle">
-                <img class="avatar-img" src="../../assets/me/panda.png" />
-                <!-- <router-link v-if="!isLoggedIn" tag="div" @click.native="onClickSubRoute" to="/me/sign-in"> -->
-                <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
-                    <span class="label-text">这里登录或注册, 查看更多信息</span>
-                </router-link>
+                    <img class="avatar-img" @click="onClickProfile" src="../../assets/me/panda.png" />
+                    <!-- <router-link v-if="!isLoggedIn" tag="div" @click.native="onClickSubRoute" to="/me/sign-in"> -->
+                    <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
+                        <span class="label-text">这里登录或注册, 查看更多信息</span>
+                    </router-link>
                 </div>
                 <!-- <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to"> -->
-                <router-link tag="div" class="friend-circle" to="/me/how-to">
+                <router-link tag="div" class="howto" to="/me/how-to">
                     <img class="find-img" src="../../assets/me/guide.svg" />
                     <span class="find-item">使用指南</span>
                 </router-link>
@@ -32,6 +34,7 @@
     import Tabbar from '../common/Tabbar';
     import Header from '../common/Header';
     import { mapGetters, mapActions } from 'vuex';
+    import { MessageBox } from 'mint-ui';
 
     export default {
         components: {
@@ -58,7 +61,16 @@
                 element.classList.remove('animated', 'slideOutLeft');
                 element.classList.add('animated', 'slideInLeft', 'faster');
             },
-            ...mapActions(['logout'])
+            ...mapActions(['logout']),
+            onClickProfile() {
+                if (!this.isLoggedIn) {
+                    MessageBox({
+                        message: '您登录后，可以查看更新个人资料。'
+                    });
+                } else {
+                    this.$router.push('/me/profile');
+                }
+            }
         },
         updated() {
             const route = this.$route.fullPath;
@@ -96,12 +108,12 @@
         display: flex;
         align-items: center;
         left: 0;
-        height: 40px;
+        height: 60px;
         padding: 8px 10px;
         margin-top: 10px;
         background-color: #fff;
     }
-    .exit {
+    .exit, .howto {
         display: flex;
         align-items: center;
         left: 0;
@@ -110,14 +122,20 @@
         margin-top: 30px;
         background-color: #fff;
     }
+    .reminder {
+        height: 40px;
+        padding: 8px 8px;
+        background-color: #fff;
+        font-size: $ft-small-help;
+    }
     .find-img {
         height: 20px;
         width: 20px;
         padding-right: 20px;
     }
     .avatar-img {
-        height: 30px;
-        width: 30px;
+        height:50px;
+        width: 50px;
         padding-right: 20px;
     }
     .animated.faster {

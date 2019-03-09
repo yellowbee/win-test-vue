@@ -8,6 +8,7 @@ import Me from '../components/me/Me';
 import HowTo from '../components/me/HowTo';
 import Signin from '../components/me/Signin';
 import Signup from '../components/me/Signup';
+import Profile from '../components/me/Profile';
 
 Vue.use(VueRouter);
 
@@ -38,6 +39,10 @@ export default new VueRouter({
             path: '/me',
             component: Me,
             children: [
+                {
+                    path: 'profile',
+                    component: Profile
+                },
                 {
                     path: 'how-to',
                     component: HowTo

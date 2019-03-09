@@ -113,10 +113,13 @@
                     this.signupBtn.disabled = true;
 
                     axios.post('https://woyaotest.com/new-testee', {
-                        name: this.testee.name,
+                        age: this.testee.age,
+                        edu: this.testee.edu,
                         industry: this.testee.industry,
-                        size: this.testee.size,
                         mobile: this.testee.mobile,
+                        name: this.testee.name,
+                        sex: this.testee.sex,
+                        size: this.testee.size,
                         code: this.testee.code
                     })
                         .then((res) => {
