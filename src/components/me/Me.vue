@@ -11,6 +11,7 @@
                     <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
                         <span class="label-text">这里登录或注册, 查看更多信息</span>
                     </router-link>
+                    <div v-if="isLoggedIn">{{ getName }}</div>
                 </div>
                 <!-- <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to"> -->
                 <router-link tag="div" class="howto" to="/me/how-to">
@@ -21,6 +22,12 @@
                 <div v-if="isLoggedIn" @click="logout" class="exit">
                     <img class="find-img" src="../../assets/me/exit.svg" />
                     <span class="find-item">退出</span>
+                </div>
+
+                <div class="terms">
+                    <router-link tag="div" to="/me/terms">
+                        <span class="label-text">使用本服务表明您认可使用协议，点击这里查看</span>
+                    </router-link>
                 </div>
                 <Tabbar/>
             </div>
@@ -42,7 +49,7 @@
             Header
         },
         computed: {
-            ...mapGetters(['isLoggedIn'])
+            ...mapGetters(['isLoggedIn', 'getName'])
         },
         data() {
             return {
@@ -143,5 +150,10 @@
     }
     .label-text {
         text-decoration: underline;
+    }
+    .terms {
+        text-align: center;
+        font-size: $ft-small-help;
+        padding: 20px 0;
     }
 </style>

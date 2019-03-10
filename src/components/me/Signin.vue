@@ -78,7 +78,7 @@
                                 this.signinBtn.disabled = false;
                             } else {
                                 this.errors.response = null;
-                                this.login({ token: res.data.token, uuid: res.data.uuid });
+                                this.login({ token: res.data.token, uuid: res.data.uuid, name: res.data.name });
                             }
                         })
                         .catch(function (err) {

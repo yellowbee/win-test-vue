@@ -9,6 +9,7 @@ import HowTo from '../components/me/HowTo';
 import Signin from '../components/me/Signin';
 import Signup from '../components/me/Signup';
 import Profile from '../components/me/Profile';
+import Terms from '../components/me/Terms';
 
 Vue.use(VueRouter);
 
@@ -42,6 +43,10 @@ export default new VueRouter({
                 {
                     path: 'profile',
                     component: Profile
+                },
+                {
+                    path: 'terms',
+                    component: Terms
                 },
                 {
                     path: 'how-to',
