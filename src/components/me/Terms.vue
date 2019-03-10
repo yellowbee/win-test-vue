@@ -1,6 +1,6 @@
 <template>
     <transition name="slide">
-        <div class="sign-in">
+        <div class="terms-container">
             <div style="position: fixed;width: 100%; z-index: 90;">
                 <Back :destRoute="'/me'" :title="'测试平台使用协议'"/>
             </div>
@@ -210,8 +210,8 @@
                     8.3 本协议解释权及修订权归爱测试所有。
                 </p>
                 <div class="terms-section">如有任何关于本协议之疑惑，您可以通过如下联系方式同爱测试联系：</div>
-                <div>liukunlun@outlook.com</div>
-                <div>2019年3月10日</div>
+                <div style="margin-top: 10px;">liukunlun@outlook.com</div>
+                <div style="margin-top: 10px;">2019年3月10日</div>
             </div>
         </div>
     </transition>
@@ -241,7 +241,7 @@
 <style scoped lang="scss">
     @import "../../scss/constants";
 
-    .sign-in {
+    .terms-container {
         position: fixed;
         width:100%;
         height:100%;
@@ -253,99 +253,6 @@
         background-color: $bg-theme-color;
         overflow-y: auto;
     }
-    .form {
-        height: 100%;
-        width: 80%;
-        margin: 100px auto;
-    }
-    .form-picker {
-        display: block;
-        width: 100%;
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        background-color: white;
-        margin: 10px auto;
-        padding: 0 0 0 10px;
-        font-size: $ft-form-normal;
-    }
-    .flex-container {
-        display: flex;
-        flex-direction: row;
-        margin: 10px auto;
-    }
-    .form-pay-type, .form-contact {
-        width: 35%;
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        background-color: white;
-        padding: 14px;
-        font-size: $ft-form-normal;
-    }
-    .form-pay-desc {
-        width: calc(65% - 10px);
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        background-color: white;
-        font-size: $ft-form-normal;
-        padding-left: 10px;
-        margin-left: 10px;
-    }
-    .picker-item {
-        display: inline-block;
-        padding: 0;
-    }
-    .form-mobile {
-        display: block;
-        width: 100%;
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        margin: 10px auto;
-        padding: 0 0 0 10px;
-        font-size: $ft-form-normal;
-    }
-    .form-desc {
-        height: 100px;
-        padding: 10px 0 0 10px;
-    }
-    .form-code {
-        display: inline-block;
-        width: 55%;
-        height: 40px;
-        border: none;
-        margin: 10px 0;
-        padding: 0 0 0 10px;
-        font-size: $ft-form-normal;
-        background-color: $bg-theme-color;
-    }
-    .form-get-code {
-        display: inline-block;
-        width: calc(45% - 10px);
-        color: white;
-        margin: 10px 0;
-        font-size: $ft-form-normal;
-        background-color: $theme-color;
-    }
-    .form-submit {
-        width: 100%;
-        color: white;
-        margin: 30px 0 5px 0;
-        background-color: $theme-color;
-    }
-    .helper-text {
-        width: 80%;
-        margin: 0 auto;
-        font-weight: $ft-weight;
-        text-decoration: underline;
-        font-size: $ft-form-normal;
-    }
-    .err-msg {
-        font-size: $ft-form-err-msg;
-        color: red;
-    }
     .terms {
         padding: 80px 20px;
     }
@@ -356,11 +263,5 @@
     .terms-section {
         margin-top: 30px;
         font-size: $ft-form-normal;
-    }
-    .slide-enter-active,.slide-leave-active{
-        transition: all 0.3s;
-    }
-    .slide-enter,.slide-leave-to{
-        transform: translate3d(100%, 0, 0);
     }
 </style>
