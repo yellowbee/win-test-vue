@@ -10,6 +10,7 @@ import Signin from '../components/me/Signin';
 import Signup from '../components/me/Signup';
 import Profile from '../components/me/Profile';
 import Terms from '../components/me/Terms';
+import QRcode from '../components/me/QRcode';
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,10 @@ export default new VueRouter({
                 {
                     path: 'profile',
                     component: Profile
+                },
+                {
+                    path: 'qrcode',
+                    component: QRcode
                 },
                 {
                     path: 'terms',

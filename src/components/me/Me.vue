@@ -14,6 +14,10 @@
                     <div v-if="isLoggedIn">{{ getName }}</div>
                 </div>
                 <!-- <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to"> -->
+                <router-link tag="div" class="howto" to="/me/qrcode">
+                    <img class="find-img" src="../../assets/me/share.svg" />
+                    <span class="find-item">分享爱测试应用</span>
+                </router-link>
                 <router-link tag="div" class="howto" to="/me/how-to">
                     <img class="find-img" src="../../assets/me/guide.svg" />
                     <span class="find-item">使用指南</span>
