@@ -18,7 +18,7 @@
                         <div class="picker-item" style="width: 30%;">{{ testee.industry === null ? '职业' : testee.industry }}</div>
                         <div class="picker-item" style="width: 30%;">{{ testee.edu === null ? '学历' : testee.edu }}</div>
                     </div>
-                    <textarea class="form-mobile form-desc" v-model="testee.desc" placeholder="请在这里写下自我介绍，方便测试的方式(在线/离线)和方便测试的时间段"/>
+                    <textarea class="form-mobile form-desc" v-model="testee.desc" placeholder="请在这里写下自我介绍，方便测试的方式(在线/离线)和方便测试的时间段。注意不要在介绍里包括姓名和联系方式等个人信息。"/>
 
                     <div class="section-title">我的角色 (成为测试招募员能够赢取企业订单哦)</div>
                     <div class="form-picker" @click="showPickerRole">
