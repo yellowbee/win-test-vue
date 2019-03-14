@@ -6,7 +6,7 @@
                 <div class="reminder">小提示: 点击头像进一步完善个人资料可以更快接到任务哦!</div>
 
                 <div class="friend-circle">
-                    <img class="avatar-img" @click="onClickProfile" src="../../assets/me/panda.png" />
+                    <img class="avatar-img" @click="onClickProfile" src="../../assets/me/avatar.png" />
                     <!-- <router-link v-if="!isLoggedIn" tag="div" @click.native="onClickSubRoute" to="/me/sign-in"> -->
                     <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
                         <span class="label-text">这里登录或注册, 查看更多信息</span>
