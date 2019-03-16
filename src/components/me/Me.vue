@@ -1,6 +1,6 @@
 <template>
     <div class="me">
-        <div class="wrapper" ref="wrapper">
+        <!-- <div class="wrapper" ref="wrapper"> -->
             <Header :title="'我'"/>
             <div class="find-content">
                 <div class="reminder">小提示: 点击头像进一步完善个人资料可以更快接到任务哦!</div>
@@ -33,9 +33,9 @@
                         <span class="label-text">使用本服务表明您认可使用协议，点击这里查看</span>
                     </router-link>
                 </div>
-                <Tabbar/>
             </div>
-        </div>
+        <Tabbar/>
+        <!-- </div> -->
         <!-- <router-view @backToMe="onBackToMe"></router-view> -->
         <router-view></router-view>
     </div>
