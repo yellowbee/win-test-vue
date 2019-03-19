@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <Header :title="'找任务'" />
+        <Header :title="'爱测试 (个人版)'" />
         <div class="head-holder"></div>
         <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
             <div class="helper-text">登录或注册后可以查看到更多任务哦!</div>
