@@ -1,8 +1,10 @@
 <template>
     <div class="search">
-        <Header :title="'赚测试'" />
+        <Header :title="'找任务'" />
         <div class="head-holder"></div>
-        <div v-if="!isLoggedIn" class="helper-text">登录或注册后可以查看到更多任务哦!</div>
+        <router-link v-if="!isLoggedIn" tag="div" to="/me/sign-in">
+            <div class="helper-text">登录或注册后可以查看到更多任务哦!</div>
+        </router-link>
         <div class="title">
             筛选测试任务
         </div>
