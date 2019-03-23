@@ -3,9 +3,7 @@
         <div class="head">
             {{ task.name }}
         </div>
-        <div class="section">
-            {{ task.desc }}
-        </div>
+        <p class="section" ref="taskDesc"></p>
         <div class="section">
             <div class="sec-head">测试者标准</div>
             <div>
@@ -32,6 +30,19 @@
         name: 'TaskItem',
         props: {
             task: Object
+        },
+        computed: {
+            descUrlified: function() {
+                let urlRegex = /(https?:\/\/[^\s]+)/g;
+                return this.task.desc.replace(urlRegex, function(url) {
+                    return '<a href="' + url + '">' + url + '</a>';
+                })
+                // or alternatively
+                // return text.replace(urlRegex, '<a href="$1">$1</a>')
+            }
+        },
+        mounted: function () {
+            this.$refs.taskDesc.innerHTML = this.descUrlified;
         }
     }
 </script>
@@ -44,6 +55,12 @@
         margin: 10px 0;
         padding: 20px 20px;
         background-color: white;
+    }
+
+    p {
+        //white-space: pre-line;
+        white-space: pre-wrap;
+        word-break: break-all;
     }
 
     .head {
