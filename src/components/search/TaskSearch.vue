@@ -47,6 +47,13 @@
             handlePickerFilterCancel() {
             },
             handlePickerFilterConfirm(e) {
+                this.$ga.event({
+                    eventCategory: 'Picker',
+                    eventAction: 'set',
+                    eventLabel: 'Task Search',
+                    eventValue: 100
+                });
+
                 this.filter.industry = e[0].value;
                 this.filter.age = e[1].value;
                 this.filter.sex = e[2].value;
