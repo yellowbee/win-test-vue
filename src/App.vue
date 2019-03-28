@@ -28,9 +28,32 @@
 </template>
 
 <script>
+    import axios from 'axios';
+    import { mapGetters, mapActions } from 'vuex';
+
     export default {
         name: 'app',
         methods: {
+            ...mapActions(['logout'])
+        },
+        computed: {
+            ...mapGetters(['isLoggedIn', 'getUuid', 'getToken'])
+        },
+        created() {
+            if (this.isLoggedIn) {
+                let config = {
+                    headers: {'Authorization': "bearer " + this.getToken}
+                };
+                axios.get(`https://woyaotest.com/api/check-token`, config)
+                    .then(response => {
+                        if (!response.data.success) {
+                            this.logout();
+                        }
+                    })
+                    .catch(err => {
+                        this.logout();
+                    })
+            }
         }
     }
 </script>
