@@ -7,7 +7,7 @@
         <div class="section">
             <div class="sec-head">测试者标准</div>
             <div>
-                {{ task.age }} {{ task.sex }} {{ task.industry }} {{ task.edu }}
+                年龄:{{ task.age }} &nbsp; 性别:{{ task.sex }} &nbsp; 行业:{{ task.industry }} &nbsp; 任务:{{ task.edu }}
             </div>
         </div>
         <div class="section">
