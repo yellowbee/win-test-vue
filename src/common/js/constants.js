@@ -5,4 +5,5 @@ const selector = {
     sex: ['男','女']
 };
 
-module.exports = selector;
+// Do not use CommonJS syntax "module.exports = " in ES6, otherwise there will be errors
+export default selector;
