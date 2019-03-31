@@ -6,8 +6,12 @@
             <Back :destRoute="'/me'" :title="'登录'"/>
 
             <div class="form">
-                <div class="page-title">测试者登录</div>
-
+                <div class="flex-container">
+                    <div style="width: 50%;" class="page-title">测试者登录</div>
+                    <router-link style="width: 50%;margin: 50px 0;" tag="div" class="helper-text" to="/me/sign-in/sign-up">
+                        还没有账号? 请注册
+                    </router-link>
+                </div>
                 <form @submit="handleSubmit">
                     <div v-if="errors.mobile" class="err-msg">{{ errors.mobile }}</div>
                     <input class="form-mobile" type="text" v-model="testee.mobile" placeholder="手机"/>
@@ -24,9 +28,6 @@
                 </form>
             </div>
             <!-- <router-link tag="div" @click.native="onClickSubRoute" class="helper-text" to="/me/sign-in/sign-up"> -->
-            <router-link tag="div" class="helper-text" to="/me/sign-in/sign-up">
-                还没有账号? 请注册
-            </router-link>
         </div>
             <!-- <router-view @backToMe="onBackToMe"></router-view> -->
             <router-view></router-view>
@@ -167,6 +168,10 @@
         bottom: 0;
         z-index: 89;
         background-color: $bg-theme-color;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
     }
     .form {
         width: 80%;
