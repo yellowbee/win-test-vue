@@ -52,6 +52,9 @@
                     <mt-button class="form-submit" type="submit" :disabled="signupBtn.disabled">
                         加入并开始体验
                     </mt-button>
+                    <div class="spinner" v-if="signupBtn.spinnerOn">
+                        <mt-spinner size="50" color="#f58723" type="fading-circle"></mt-spinner>
+                    </div>
                 </form>
             </div>
             <!-- <router-link tag="div" @click.native="onClickBack" class="helper-text" to="/me/sign-in"> -->
@@ -111,6 +114,7 @@
                 e.preventDefault();
                 if (this.checkForm()) {
                     this.signupBtn.disabled = true;
+                    this.signupBtn.spinnerOn = true;
 
                     axios.post('https://woyaotest.com/new-testee', {
                         age: this.testee.age,
@@ -130,14 +134,17 @@
                                     this.errors.response = '验证码不正确，请重新输入或获取。';
                                 }
                                 this.signupBtn.disabled = false;
+                                this.signupBtn.spinnerOn = false;
                             } else {
                                 this.errors.response = null;
+                                this.signupBtn.spinnerOn = false;
                                 this.login({ token: res.data.token.value, uuid: res.data.testee.uuid });
                             }
                         })
                         .catch(function (err) {
                             this.errors.response = '验证码不正确，请重新输入或获取';
                             this.signupBtn.disabled = false;
+                            this.signupBtn.spinnerOn = false;
                         });
                 }
             },
@@ -235,7 +242,8 @@
                     message: null
                 },
                 signupBtn: {
-                    disabled: false
+                    disabled: false,
+                    spinnerOn: false
                 }
             }
         }
@@ -343,6 +351,11 @@
     .err-msg {
         font-size: $ft-form-err-msg;
         color: red;
+    }
+    .spinner {
+        position: fixed;
+        top: 200px;
+        left: 40%;
     }
     .page-title {
         font-size: $ft-page-title;
