@@ -22,6 +22,10 @@
                     <img class="find-img" src="../../assets/me/guide.svg" />
                     <span class="find-item">使用指南</span>
                 </router-link>
+                <a tag="div" href="http://www.woyaotest.com" class="official">
+                    <img class="find-img" src="../../assets/me/website.png" />
+                    <span class="find-item">访问官网</span>
+                </a>
 
                 <div v-if="isLoggedIn" @click="logout" class="exit">
                     <img class="find-img" src="../../assets/me/exit.svg" />
@@ -124,7 +128,7 @@
         margin-top: 10px;
         background-color: #fff;
     }
-    .exit, .howto {
+    .exit, .howto, .official {
         display: flex;
         align-items: center;
         left: 0;
@@ -132,6 +136,12 @@
         padding: 8px 10px;
         margin-top: 30px;
         background-color: #fff;
+    }
+    .official {
+        text-decoration: none;
+    }
+    a:visited {
+        color: black;
     }
     .reminder {
         height: 40px;
