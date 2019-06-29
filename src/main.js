@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics';
-import MintUI from 'mint-ui'
+import MintUI from 'mint-ui';
+import VueClipboard from 'vue-clipboard2';
 import 'mint-ui/lib/style.css'
 import App from './App'
 import router from './router'
@@ -25,6 +26,8 @@ Vue.use(VueAnalytics, {
 });
 
 Vue.use(MintUI);
+VueClipboard.config.autoSetContainer = true;
+Vue.use(VueClipboard);
 
 import AwesomePicker from 'vue-awesome-picker';
 Vue.use(AwesomePicker);
