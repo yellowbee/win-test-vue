@@ -14,18 +14,22 @@
                     <div v-if="isLoggedIn">{{ getName }}</div>
                 </div>
                 <!-- <router-link tag="div" @click.native="onClickSubRoute" class="friend-circle" to="/me/how-to"> -->
-                <router-link tag="div" class="howto" to="/me/qrcode">
+                <router-link tag="div" class="qrcode" to="/me/qrcode">
                     <img class="find-img" src="../../assets/me/share.svg" />
-                    <span class="find-item">分享爱测试 (个人版)</span>
+                    <span class="find-item">爱测试二维码 (个人版)</span>
+                </router-link>
+                <router-link tag="div" class="howto" to="/me/share">
+                    <img class="find-img" src="../../assets/me/comment.svg" />
+                    <span class="find-item">分享爱测试</span>
                 </router-link>
                 <router-link tag="div" class="howto" to="/me/how-to">
                     <img class="find-img" src="../../assets/me/guide.svg" />
                     <span class="find-item">使用指南</span>
                 </router-link>
-                <a tag="div" href="http://www.woyaotest.com" class="official">
+                <router-link tag="div" class="howto" to="/me/official">
                     <img class="find-img" src="../../assets/me/website.png" />
                     <span class="find-item">访问官网</span>
-                </a>
+                </router-link>
 
                 <div v-if="isLoggedIn" @click="logout" class="exit">
                     <img class="find-img" src="../../assets/me/exit.svg" />
@@ -128,13 +132,14 @@
         margin-top: 10px;
         background-color: #fff;
     }
-    .exit, .howto, .official {
-        display: flex;
+    .exit, .qrcode, .howto, .official {
+        //display: flex;
         align-items: center;
         left: 0;
+        width: 100%;
         height: 40px;
         padding: 8px 10px;
-        margin-top: 30px;
+        margin-top: 20px;
         background-color: #fff;
     }
     .official {

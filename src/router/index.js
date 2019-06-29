@@ -11,6 +11,7 @@ import Signup from '../components/me/Signup';
 import Profile from '../components/me/Profile';
 import Terms from '../components/me/Terms';
 import QRcode from '../components/me/QRcode';
+import Share from '../components/me/Share';
 
 Vue.use(VueRouter);
 
@@ -19,7 +20,7 @@ export default new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/search'
+            redirect: '/me'
         },
         {
             path: '/oauth2/callback',
@@ -52,6 +53,14 @@ export default new VueRouter({
                 {
                     path: 'terms',
                     component: Terms
+                },
+                {
+                    path: 'Share',
+                    component: Share
+                },
+                {
+                    path: 'official',
+                    beforeEnter() {location.href = 'http://www.woyaotest.com'}
                 },
                 {
                     path: 'how-to',
